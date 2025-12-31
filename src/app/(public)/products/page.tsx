@@ -59,18 +59,18 @@ export default function ProductsPage() {
     return (
         <div>
             {/* Hero Section */}
-            <section className={cn("py-16 lg:py-24")}>
+            <section className={cn("py-8 sm:py-12 md:py-16 lg:py-24")}>
                 <div className="container">
-                    <div className="mx-auto flex max-w-4xl flex-col gap-6 text-center">
-                        <div className="mb-4 inline-flex items-center justify-center">
-                            <span className="rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+                    <div className="mx-auto flex max-w-4xl flex-col gap-4 sm:gap-6 text-center">
+                        <div className="mb-2 sm:mb-4 inline-flex items-center justify-center">
+                            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs sm:px-4 sm:py-1.5 sm:text-sm font-medium text-primary">
                                 Our Products
                             </span>
                         </div>
-                        <h1 className="text-4xl font-semibold tracking-tight lg:text-6xl">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight lg:text-6xl">
                             Products
                         </h1>
-                        <p className="text-balance text-lg leading-relaxed text-muted-foreground lg:text-xl">
+                        <p className="text-balance text-base sm:text-lg leading-relaxed text-muted-foreground lg:text-xl px-4 sm:px-0">
                             Explore our wide range of innovative products designed to meet your needs 
                             and exceed your expectations.
                         </p>
@@ -79,23 +79,23 @@ export default function ProductsPage() {
             </section>
 
             {/* Products Grid Section */}
-            <section className={cn("py-16 lg:py-24")}>
+            <section className={cn("py-8 sm:py-12 md:py-16 lg:py-24")}>
                 <div className="container">
-                    <div className="mx-auto max-w-6xl space-y-12">
-                        <div className="space-y-4 text-center">
-                            <div className="flex items-center justify-center gap-3">
-                                <Package className="size-6 text-primary" />
-                                <h2 className="text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
+                    <div className="mx-auto max-w-6xl space-y-8 sm:space-y-10 md:space-y-12">
+                        <div className="space-y-3 sm:space-y-4 text-center px-4 sm:px-0">
+                            <div className="flex items-center justify-center gap-2 sm:gap-3">
+                                <Package className="size-5 sm:size-6 text-primary" />
+                                <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
                                     Product Catalog
                                 </h2>
                             </div>
-                            <p className="mx-auto max-w-2xl text-base text-muted-foreground md:text-lg">
+                            <p className="mx-auto max-w-2xl text-sm sm:text-base text-muted-foreground md:text-lg">
                                 Discover our carefully curated selection of premium products
                             </p>
                         </div>
-                        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                        <div className="grid gap-4 sm:gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
                             {products.map((product) => (
-                                <Card key={product.id} className="group flex flex-col border-border transition-all hover:shadow-lg pt-0">
+                                <Card key={product.id} className="group flex flex-col border-border transition-all hover:shadow-lg py-0">
                                     <div className="aspect-video w-full overflow-hidden rounded-t-lg">
                                         <Image
                                             width={1000}
@@ -105,20 +105,20 @@ export default function ProductsPage() {
                                             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         />
                                     </div>
-                                    <CardHeader className="space-y-2">
-                                        <div className="flex items-center justify-between">
-                                            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                                    <CardHeader className="space-y-2 p-4 sm:p-6">
+                                        <div className="flex items-center justify-between gap-2">
+                                            <span className="rounded-full bg-primary/10 px-2.5 py-0.5 sm:px-3 sm:py-1 text-xs font-medium text-primary">
                                                 {product.category}
                                             </span>
-                                            <span className="text-lg font-semibold">{product.price}</span>
+                                            <span className="text-base sm:text-lg font-semibold">{product.price}</span>
                                         </div>
-                                        <CardTitle className="text-xl md:text-2xl">{product.name}</CardTitle>
+                                        <CardTitle className="text-lg sm:text-xl md:text-2xl">{product.name}</CardTitle>
                                     </CardHeader>
-                                    <CardContent className="flex flex-1 flex-col justify-between space-y-4">
-                                        <CardDescription className="text-base leading-relaxed">
+                                    <CardContent className="flex flex-1 flex-col justify-between space-y-3 sm:space-y-4 p-4 sm:p-6 pt-0">
+                                        <CardDescription className="text-sm sm:text-base leading-relaxed">
                                             {product.description}
                                         </CardDescription>
-                                        <Button variant="outline" className="w-full">
+                                        <Button variant="outline" className="w-full text-sm sm:text-base">
                                             <ShoppingBag className="size-4" />
                                             View Details
                                         </Button>
@@ -131,25 +131,25 @@ export default function ProductsPage() {
             </section>
 
             {/* Features Section */}
-            <section className={cn("border-y bg-muted/50 py-16 lg:py-24")}>
+            <section className={cn("border-y bg-muted/50 py-8 sm:py-12 md:py-16 lg:py-24")}>
                 <div className="container">
-                    <div className="mx-auto max-w-6xl space-y-12">
-                        <div className="space-y-4 text-center">
-                            <div className="flex items-center justify-center gap-3">
-                                <Sparkles className="size-6 text-primary" />
-                                <h2 className="text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
+                    <div className="mx-auto max-w-6xl space-y-8 sm:space-y-10 md:space-y-12">
+                        <div className="space-y-3 sm:space-y-4 text-center px-4 sm:px-0">
+                            <div className="flex items-center justify-center gap-2 sm:gap-3">
+                                <Sparkles className="size-5 sm:size-6 text-primary" />
+                                <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
                                     Why Choose Our Products
                                 </h2>
                             </div>
-                            <p className="mx-auto max-w-2xl text-base text-muted-foreground md:text-lg">
+                            <p className="mx-auto max-w-2xl text-sm sm:text-base text-muted-foreground md:text-lg">
                                 What sets us apart from the rest
                             </p>
                         </div>
-                        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                        <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4 px-4 sm:px-0">
                             {features.map((feature, index) => (
-                                <div key={index} className="space-y-3 text-center">
-                                    <h3 className="text-lg font-semibold">{feature.title}</h3>
-                                    <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
+                                <div key={index} className="space-y-2 sm:space-y-3 text-center">
+                                    <h3 className="text-base sm:text-lg font-semibold">{feature.title}</h3>
+                                    <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground md:text-base">
                                         {feature.description}
                                     </p>
                                 </div>
