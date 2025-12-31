@@ -45,7 +45,7 @@ export function Header() {
 					))}
 					<Button
 						variant="outline" 
-						onClick={()=> router.push('/auth/sign-in')}
+						onClick={()=> router.push('/sign-in')}
 					>
 						Sign In
 					</Button>

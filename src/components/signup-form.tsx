@@ -90,7 +90,7 @@ export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
                 <Button type="submit">
                   {isPending ? "Signing up..." : "Create Account"}
                 </Button>
-                <FieldDescription className="px-6 text-center cursor-pointer" onClick={() => router.push("/auth/sign-in")}>
+                <FieldDescription className="px-6 text-center cursor-pointer" onClick={() => router.push("/sign-in")}>
                   Already have an account? Sign in
                 </FieldDescription>
               </Field>

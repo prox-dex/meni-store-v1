@@ -5,10 +5,13 @@ import { MenuIcon, XIcon } from "lucide-react";
 import React from "react";
 import { createPortal } from "react-dom";
 import { publicNavLinks } from "@/config/navigation";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export function MobileNav() {
 	const [open, setOpen] = React.useState(false);
 	const { isMobile } = useMediaQuery();
+	const router = useRouter();
 
 	// 🚫 Disable body scroll when open
 	React.useEffect(() => {
@@ -58,7 +61,7 @@ export function MobileNav() {
 						>
 							<div className="grid gap-y-2">
 								{publicNavLinks.map((link) => (
-									<a
+									<Link
 										className={buttonVariants({
 											variant: "ghost",
 											className: "justify-start",
@@ -67,11 +70,11 @@ export function MobileNav() {
 										key={link.label}
 									>
 										{link.label}
-									</a>
+									</Link>
 								))}
 							</div>
 							<div className="mt-12 flex flex-col gap-2">
-								<Button className="w-full" variant="outline">
+								<Button className="w-full" variant="outline" onClick={()=> router.push('/sign-in')}>
 									Sign In
 								</Button>
 								<Button className="w-full">Download Price list</Button>

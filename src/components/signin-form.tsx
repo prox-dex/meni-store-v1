@@ -87,7 +87,7 @@ export function SigninForm({
                 <Button type="submit" disabled={isPending}>
                   {isPending ? "Signing in..." : "Login"}
                 </Button>
-                <FieldDescription className="text-center cursor-pointer" onClick={() => router.push("/auth/sign-up")}>
+                <FieldDescription className="text-center cursor-pointer" onClick={() => router.push("/sign-up")}>
                   Don&apos;t have an account? Sign up
                 </FieldDescription>
               </Field>
