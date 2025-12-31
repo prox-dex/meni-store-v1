@@ -68,13 +68,17 @@ export function MobileNav() {
 										})}
 										href={link.href}
 										key={link.label}
+										onClick={()=> setOpen(false)}
 									>
 										{link.label}
 									</Link>
 								))}
 							</div>
 							<div className="mt-12 flex flex-col gap-2">
-								<Button className="w-full" variant="outline" onClick={()=> router.push('/sign-in')}>
+								<Button className="w-full" variant="outline" onClick={()=> {
+									router.push('/sign-in')
+									setOpen(false)
+								}}>
 									Sign In
 								</Button>
 								<Button className="w-full">Download Price list</Button>
