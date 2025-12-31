@@ -58,7 +58,7 @@ interface Project1Props {
 
 const Project1 = ({ className }: Project1Props) => {
   return (
-    <section className={cn("lg:py-32", className)}>
+    <section className={cn("pb-16 lg:pb-24", className)}>
       <div className="container space-y-6">
         <FadeUpOnScroll>
           <header className="border-b border-border pb-6 md:pb-8">
@@ -84,7 +84,7 @@ const Project1 = ({ className }: Project1Props) => {
             <Image
               src={heroImage}
               alt="Team collaborating in a modern workspace, sharing ideas and working together."
-              className="aspect-[16/7] w-full object-cover"
+              className="aspect-16/7 w-full object-cover"
               width={1000}
               height={1000}
             />
@@ -138,7 +138,7 @@ const Project1 = ({ className }: Project1Props) => {
                     ? "Team brainstorming with sticky notes, generating creative ideas."
                     : "Three people sitting on a couch with laptops, collaborating in a modern workspace."
                 }
-                className="aspect-[4/3] w-full object-cover transition-transform duration-500"
+                className="aspect-4/3 w-full object-cover transition-transform duration-500"
                 width={1000}
                 height={1000}
               />
@@ -159,7 +159,7 @@ const Project1 = ({ className }: Project1Props) => {
                     ? "Group of people in a meeting room with laptops, discussing a project."
                     : "People collaborating at a table with laptops in a modern office."
                 }
-                className="aspect-[4/3] w-full object-cover transition-transform duration-500"
+                className="aspect-4/3 w-full object-cover transition-transform duration-500"
                 width={1000}
                 height={1000}
               />

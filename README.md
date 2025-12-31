@@ -1,24 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# No Better App
+
+A modern Next.js application with authentication, organization management, and product management features.
+
+## Tech Stack
+
+- **Framework:** Next.js 15 (App Router)
+- **Database:** PostgreSQL with Prisma ORM
+- **Authentication:** Better Auth
+- **UI:** Radix UI + Tailwind CSS
+- **Language:** TypeScript
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ 
+- PostgreSQL database
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd no-better-app
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Set up environment variables:
+Create a `.env.local` file in the root directory:
+```env
+DATABASE_URL="postgresql://user:password@localhost:5432/dbname"
+BETTER_AUTH_SECRET="your-secret-key-here"
+BETTER_AUTH_URL="http://localhost:3000"
+NEXT_PUBLIC_BETTER_AUTH_URL="http://localhost:3000"
+NODE_ENV="development"
+```
+
+To generate a secure `BETTER_AUTH_SECRET`:
+```bash
+openssl rand -base64 32
+```
+
+4. Set up the database:
+```bash
+# Generate Prisma Client
+npm run prisma:generate
+
+# Run migrations
+npm run prisma:migrate
+
+# Or push schema directly (development only)
+npm run prisma:push
+```
+
+5. Start the development server:
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run prisma:generate` - Generate Prisma Client
+- `npm run prisma:migrate` - Run database migrations
+- `npm run prisma:studio` - Open Prisma Studio (database GUI)
+- `npm run prisma:push` - Push schema to database (dev only)
 
 ## Learn More
 

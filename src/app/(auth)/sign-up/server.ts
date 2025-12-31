@@ -1,6 +1,6 @@
 "use server";
 
-import { authClient } from "@/app/lib/auth-client";
+import { authClient } from "@/lib/auth-client";
 
 export async function signUp(formData: FormData) {
     const email = formData.get("email") as string;

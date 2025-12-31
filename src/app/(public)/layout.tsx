@@ -17,7 +17,7 @@ export default function PublicLayout({
             <main
                 id="public-main"
                 role="main"
-                className="flex-1 px-4 py-8 md:px-8"
+                className="flex-1 px-4 md:px-8"
             >
                 <div className="mx-auto w-full max-w-7xl">
                     {children}

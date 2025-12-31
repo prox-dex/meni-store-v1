@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { MenuIcon, XIcon } from "lucide-react";
 import React from "react";
 import { createPortal } from "react-dom";
-import { navLinks } from "@/components/header";
+import { publicNavLinks } from "@/config/navigation";
 
 export function MobileNav() {
 	const [open, setOpen] = React.useState(false);
@@ -57,7 +57,7 @@ export function MobileNav() {
 							data-slot={open ? "open" : "closed"}
 						>
 							<div className="grid gap-y-2">
-								{navLinks.map((link) => (
+								{publicNavLinks.map((link) => (
 									<a
 										className={buttonVariants({
 											variant: "ghost",
@@ -74,7 +74,7 @@ export function MobileNav() {
 								<Button className="w-full" variant="outline">
 									Sign In
 								</Button>
-								<Button className="w-full">Get Started</Button>
+								<Button className="w-full">Download Price list</Button>
 							</div>
 						</div>
 					</div>,

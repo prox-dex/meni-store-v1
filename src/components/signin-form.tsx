@@ -21,7 +21,7 @@ import { useRouter } from "next/navigation"
 import { useTransition } from "react"
 import { toast } from "sonner"
 
-export function LoginForm({
+export function SigninForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {

@@ -5,17 +5,8 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { MobileNav } from "@/components/mobile-nav";
 import { useRouter } from "next/navigation";
-
-export const navLinks = [
-	{
-		label: "Products",
-		href: "#",
-	},
-	{
-		label: "About",
-		href: "#",
-	},
-];
+import { publicNavLinks } from "@/config/navigation";
+import Link from "next/link";
 
 export function Header() {
 	const router = useRouter();
@@ -39,18 +30,18 @@ export function Header() {
 					}
 				)}
 			>
-				<a className="rounded-md p-2 hover:bg-accent" href="#">
+				<Link className="rounded-md p-2 hover:bg-accent" href="/">
 					<Logo className="h-4.5" />
-				</a>
+				</Link>
 				<div className="hidden items-center gap-1 md:flex">
-					{navLinks.map((link, i) => (
-						<a
+					{publicNavLinks.map((link, i) => (
+						<Link
 							className={buttonVariants({ variant: "ghost" })}
 							href={link.href}
 							key={i}
 						>
 							{link.label}
-						</a>
+						</Link>
 					))}
 					<Button
 						variant="outline" 

@@ -29,7 +29,7 @@ const Testimonial = ({
   },
 }: TestimonialProps) => {
   return (
-    <section className={cn("py-32", className)}>
+    <section className={cn("pb-16 lg:pb-24", className)}>
       <div className="container">
         <div className="flex flex-col items-center text-center">
           <p className="mb-16 max-w-4xl px-8 font-medium lg:text-3xl">
