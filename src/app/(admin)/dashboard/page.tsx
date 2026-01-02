@@ -6,6 +6,10 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = buildMetadata({ title: "Admin Dashboard", description: "Overview of metrics and recent activity for administrators.", openGraph: { url: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'}/admin/dashboard` } });
 import { Badge } from "@/components/ui/badge"
 import {
   Package,

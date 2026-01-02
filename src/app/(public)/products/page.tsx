@@ -4,10 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Package, ShoppingBag, Sparkles } from "lucide-react";
 import Image from "next/image";
 
-export const metadata = {
+import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = buildMetadata({
     title: 'Products',
     description: 'Explore our wide range of innovative products designed to meet your needs and exceed your expectations.',
-};
+    openGraph: { url: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'}/products` },
+});
 
 const products = [
   {

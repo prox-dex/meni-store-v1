@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/header";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-    title: "No Better App",
-    description: "Welcome to No Better App",
-};
+export const metadata: Metadata = buildMetadata({ title: "No Better App" });
 
 export default function PublicLayout({
     children,

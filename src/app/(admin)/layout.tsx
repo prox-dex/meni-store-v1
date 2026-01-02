@@ -7,11 +7,9 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-    title: "No Better App",
-    description: "Welcome to No Better App",
-};
+export const metadata: Metadata = buildMetadata({ title: "Admin — No Better App", description: "Administration area for No Better App" });
 
 export default function AdminLayout({
     children,

@@ -1,11 +1,14 @@
 import { Hero } from "@/components/hero";
 import { Project1 } from "@/components/project1";
 import { Testimonial } from "@/components/testimonial";
+import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata: Metadata = buildMetadata({
   title: 'Home',
   description: 'Discover innovative solutions and exceptional experiences designed to empower your success.',
-};
+  openGraph: { url: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'}` },
+});
 
 export default function HomePage() {
   return (

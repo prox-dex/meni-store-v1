@@ -13,10 +13,14 @@ import {
   Zap
 } from "lucide-react";
 
-export const metadata = {
+import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = buildMetadata({
   title: 'About Us',
   description: 'Learn more about our company, mission, and the team behind our innovative solutions.',
-};
+  openGraph: { url: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'}/about` },
+});
 
 const stats = [
   {
