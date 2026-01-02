@@ -21,8 +21,8 @@ export async function POST(request: NextRequest) {
 
     const validatedData = createOrganizationSchema.parse(body);
 
-    const slugAvailable = await repository.findBySlug(validatedData.slug);
-    if (!slugAvailable) {
+    const existing = await repository.findBySlug(validatedData.slug);
+    if (existing) {
         return NextResponse.json(
             { error: 'Slug is already taken' },
             { status: 400 }

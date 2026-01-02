@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { columns } from "./columns"
 import { DataTable } from "./data-table"
 import {
@@ -12,9 +13,20 @@ import {
 import { Button } from "@/components/ui/button"
 import { Plus } from "lucide-react"
 import { useOrganizations } from "@/features/organization/hooks/use-organizations"
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetDescription,
+} from "@/components/ui/sheet"
+import { OrganizationForm } from "@/features/organization/components/organization-form"
+import { toast } from "sonner"
 
 export function OrganizationList() {
-  const {data, isLoading, error} = useOrganizations();
+  const {data, isLoading, error, refetch} = useOrganizations();
+  const [open, setOpen] = useState(false)
 
   if (isLoading) {
     return <div>Loading...</div>
@@ -33,10 +45,33 @@ export function OrganizationList() {
             Manage organizations and their configurations
           </p>
         </div>
-        <Button>
-          <Plus className="size-4" />
-          Add Organization
-        </Button>
+
+        <Sheet open={open} onOpenChange={setOpen}>
+          <SheetTrigger asChild>
+            <Button>
+              <Plus className="size-4" />
+              Add Organization
+            </Button>
+          </SheetTrigger>
+
+          <SheetContent side="right">
+            <SheetHeader>
+              <SheetTitle>Add Organization</SheetTitle>
+              <SheetDescription>Create a new organization</SheetDescription>
+            </SheetHeader>
+
+            <div className="p-4">
+              <OrganizationForm
+                onCancel={() => setOpen(false)}
+                onSuccess={(org) => {
+                  toast.success(`Organization created - ${org.name}`);
+                  setOpen(false);
+                  refetch();
+                }}
+              />
+            </div>
+          </SheetContent>
+        </Sheet>
       </div>
 
       <Card>

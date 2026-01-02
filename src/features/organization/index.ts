@@ -1,5 +1,5 @@
 export {
-    getUsers as getOrganizations
+    getOrganizations
 } from '@/features/organization/api'
 
 export {

@@ -1,3 +1,7 @@
 export {
-    getOrganizations as getUsers,
-  } from './queries';
+  getOrganizations,
+} from './queries';
+
+export {
+  createOrganization
+} from './mutations'
