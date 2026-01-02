@@ -5,5 +5,5 @@ export type NavItem = {
     url: string
     icon?: LucideIcon
     isActive?: boolean
-    children?: NavItem[]
+    items?: NavItem[]
 }

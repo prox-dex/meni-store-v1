@@ -1,8 +1,6 @@
 import { Star } from "lucide-react";
 import React from "react";
-
 import { cn } from "@/lib/utils";
-
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 

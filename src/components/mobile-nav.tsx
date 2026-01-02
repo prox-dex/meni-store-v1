@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { MenuIcon, XIcon } from "lucide-react";
 import React from "react";
 import { createPortal } from "react-dom";
-import { publicNavLinks } from "@/config/navigation";
+import { publicNavLinks } from "@/constants/navigation";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 

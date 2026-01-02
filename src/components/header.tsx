@@ -5,7 +5,7 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { MobileNav } from "@/components/mobile-nav";
 import { useRouter } from "next/navigation";
-import { publicNavLinks } from "@/config/navigation";
+import { publicNavLinks } from "@/constants/navigation";
 import Link from "next/link";
 
 export function Header() {
